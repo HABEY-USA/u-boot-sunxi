@@ -172,9 +172,9 @@
 	"setargs=" \
 	  "if test -z \\\\\"$root\\\\\"; then"\
 	    " if test \\\\\"$bootpath\\\\\" = \"/boot/\"; then"\
-	      " root=\"/dev/mmcblk0p1 rootwait\";"\
+	      " root=\"/dev/mmcblk1p1 rootwait\";"\
 	    " else" \
-	      " root=\"/dev/mmcblk0p2 rootwait\";"\
+	      " root=\"/dev/mmcblk1p2 rootwait\";"\
 	    " fi;"\
 	  " fi;"\
 	  " setenv bootargs console=${console} root=${root}" \
