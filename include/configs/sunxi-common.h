@@ -160,6 +160,7 @@
 #define RESET_WATCHDOG "true"
 #endif
 
+#if 0
 #define CONFIG_EXTRA_ENV_SETTINGS \
 	"bootm_size=0x10000000\0" \
 	"console=ttyS0,115200\0" \
@@ -243,6 +244,7 @@
 	""
 
 #define CONFIG_SYS_BOOT_GET_CMDLINE
+#endif
 
 #include <config_cmd_default.h>
 
