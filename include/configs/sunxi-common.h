@@ -86,8 +86,10 @@
 #define CONFIG_GENERIC_MMC
 #define CONFIG_CMD_MMC
 #define CONFIG_MMC_SUNXI
+#if 0
 #ifndef CONFIG_MMC_SUNXI_SLOT
 #define CONFIG_MMC_SUNXI_SLOT		0
+#endif
 #endif
 #define CONFIG_ENV_IS_IN_MMC
 #define CONFIG_SYS_MMC_ENV_DEV		0	/* first detected MMC controller */

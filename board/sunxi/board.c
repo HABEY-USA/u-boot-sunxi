@@ -117,18 +117,36 @@ static void mmc_pinmux_setup(int sdc)
 	}
 }
 
+#if 0
 int board_mmc_init(bd_t *bis)
 {
-#if CONFIG_MMC_SUNXI_SLOT_EXTRA != 2 
+//#if CONFIG_MMC_SUNXI_SLOT_EXTRA != 2 
 	mmc_pinmux_setup(CONFIG_MMC_SUNXI_SLOT);
 	sunxi_mmc_init(CONFIG_MMC_SUNXI_SLOT);
-#else
+//#else
 	mmc_pinmux_setup(CONFIG_MMC_SUNXI_SLOT_EXTRA);
 	sunxi_mmc_init(CONFIG_MMC_SUNXI_SLOT_EXTRA);
-#endif
+//#endif
 
 	return 0;
 }
+#endif
+int board_mmc_init(bd_t *bis)
+{
+
+//#define CONFIG_MMC_SUNXI_SLOT 2
+        printf("CONFIG_MMC_SUNXI_SLOT: %d\n", CONFIG_MMC_SUNXI_SLOT);
+	mmc_pinmux_setup(CONFIG_MMC_SUNXI_SLOT);
+        sunxi_mmc_init(CONFIG_MMC_SUNXI_SLOT);
+//#define CONFIG_MMC_SUNXI_SLOT_EXTRA 0
+
+#if !defined (CONFIG_SPL_BUILD) && defined (CONFIG_MMC_SUNXI_SLOT_EXTRA)
+        sunxi_mmc_init(CONFIG_MMC_SUNXI_SLOT_EXTRA);
+#endif
+
+        return 0;
+}
+
 #endif
 
 void i2c_init_board(void)

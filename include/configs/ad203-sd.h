@@ -27,7 +27,7 @@
  */
 #include <configs/sunxi-common.h>
 
-#define CONFIG_MMC_SUNXI_SLOT_EXTRA     0
+#define CONFIG_MMC_SUNXI_SLOT 0
 
 /*boot sd*/
 #define CONFIG_EXTRA_ENV_SETTINGS \
